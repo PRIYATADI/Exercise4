@@ -14,6 +14,7 @@ namespace ShellProj_Datastructures_Memory
         /// <param name="args"></param>
         static void Main()
         {
+
             bool run = true;
             while (true)
             {
@@ -76,12 +77,46 @@ namespace ShellProj_Datastructures_Memory
              * Below you can see some inspirational code to begin working.
             */
 
-            //List<string> theList = new List<string>();
-            //string input = Console.ReadLine();
-            //char nav = input[0];
-            //string value = input.substring(1);
+            List<string> theList = new List<string>();
+            bool move = true;
+            while (true)
+            {
+                Console.WriteLine("Please write a word starting with + to add it to the lost or - to remove it from the list");
+               
+                string input = Console.ReadLine();
+                char nav = input[0];
+                string value;
+                int sizeOflist = 0;
 
-            //switch(nav){...}
+                switch (nav)
+                {
+                    case '+':
+                        value = input.Substring(1);
+                         theList.Add(value);
+                        sizeOflist = theList.Count;
+                        
+
+
+                        break;
+                    case '-':
+                        value = input.Substring(1);
+                        theList.Remove(value);
+                        sizeOflist = theList.Count;
+                        break;
+                    case '0':
+                        return;
+                   
+
+
+
+                }
+                
+                Console.WriteLine("capacity of the list now is: "+sizeOflist);
+
+
+
+              
+            }
         }
 
         /// <summary>
@@ -94,6 +129,55 @@ namespace ShellProj_Datastructures_Memory
              * Create a switch with cases to enqueue items or dequeue items
              * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
             */
+            Queue<string> Testqueue = new Queue<string>();
+          
+            int Qsize;
+            
+            
+            List<string> theList = new List<string>();
+            while (true)
+
+            {
+                Console.Write("Enter + to get your self in the queue or - to get out: ");
+                string input = Console.ReadLine();
+                char nav = input[0];
+
+                switch (nav)
+                {
+                    case '+':
+                        Console.WriteLine("Provide your name: ");
+                        string inputname = Console.ReadLine();
+
+
+                        Testqueue.Enqueue(inputname);
+                        Qsize = Testqueue.Count;
+                        Console.WriteLine( "The current queue size is : " + Qsize);
+
+
+
+                        break;
+                    case '-':
+                        Testqueue.Dequeue();
+                        Qsize = Testqueue.Count;
+                        Console.WriteLine("queue has " + Qsize + " people below");
+                        foreach (var item in Testqueue)
+                        {
+                            
+                            Console.WriteLine(item);
+                        }
+                        
+                        break;
+
+                    case '0':
+                        return;
+
+                    default:
+                        break;
+                }
+                
+               
+
+            }
         }
 
         /// <summary>
@@ -106,6 +190,10 @@ namespace ShellProj_Datastructures_Memory
              * Create a switch with cases to push or pop items
              * Make sure to look at the stack after pushing and and poping to see how it behaves
             */
+
+            Stack<string> moshen = new Stack<string>();
+            
+
         }
 
         static void CheckParanthesis()
