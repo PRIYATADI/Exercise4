@@ -15,6 +15,7 @@ namespace ShellProj_Datastructures_Memory
         static void Main()
         {
             bool run = true;
+
             while (true)
             {
 
