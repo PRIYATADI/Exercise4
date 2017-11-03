@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ShellProj_Datastructures_Memory
 {
     class Program
@@ -87,7 +88,7 @@ namespace ShellProj_Datastructures_Memory
                 char nav = input[0];
                 string value;
                 int sizeOflist = 0;
-
+                Console.WriteLine(theList.Capacity);
                 switch (nav)
                 {
                     case '+':
@@ -134,7 +135,7 @@ namespace ShellProj_Datastructures_Memory
             int Qsize;
             
             
-            List<string> theList = new List<string>();
+            //List<string> theList = new List<string>();
             while (true)
 
             {
@@ -191,10 +192,90 @@ namespace ShellProj_Datastructures_Memory
              * Make sure to look at the stack after pushing and and poping to see how it behaves
             */
 
-            Stack<string> moshen = new Stack<string>();
-            
+            Stack<string> stack = new Stack<string>();
+            int Qsize;
+
+
+           
+            while (true)
+
+            {
+                Console.Write("Enter + to get your self in the queue or - to get out: ");
+                string input = Console.ReadLine();
+                char nav = input[0];
+
+                switch (nav)
+                {
+                    case '+':
+                        Console.WriteLine("Provide your name: ");
+                        string inputname = Console.ReadLine();
+
+
+                        stack.Push(inputname);
+                        Qsize = stack.Count;
+                        Console.WriteLine("The current stack size is : " + Qsize);
+
+
+
+                        break;
+                    case '-':
+
+                        stack.Pop();
+                        /*List<string> theList = stack.ToList<string>()*/;
+                        //theList.RemoveAt(0);
+                        Qsize = stack.Count;
+                        Console.WriteLine("stack has " + Qsize + " people below");
+                        foreach (var item in stack)
+                        {
+
+                            Console.WriteLine(item);
+                        }
+
+                        break;
+
+                    case '0':
+                        return;
+                    case 'r':
+                        ReverseText();
+                        break;
+
+                    default:
+                        break;
+                }
+
+
+
+            }
 
         }
+
+        static void ReverseText()
+        {
+
+            Console.WriteLine("Which text do you want to get reversed:");
+            string inputString = Console.ReadLine();
+            //Stack<string> inputStack = new Stack<string>(inputString.Split());
+            //Console.WriteLine(inputStack.Count);
+            //foreach (var item in inputStack)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //for (int i = 0; i < inputString.Length; i++)
+            //    inputStack.Push(inputString.Substring(i, 1));
+            //string resultstring = string.Empty;
+            //for (int i = 0; i < inputString.Length; i++)
+            //    resultstring += inputStack.Pop();
+            //Console.WriteLine("Reverse string " + resultstring);
+            Stack<char> text = new Stack<char>(inputString);
+            foreach (var item in text)
+            {
+                Console.Write(item);
+            }
+
+
+
+        }
+
 
         static void CheckParanthesis()
         {
@@ -203,7 +284,19 @@ namespace ShellProj_Datastructures_Memory
              * Example of correct: (()), {}, [({})]
              * Example of incorrect: (()]), [), {[()}]
              */
+            Console.WriteLine("Provide the text here to check: ");
+            string input = Console.ReadLine();
+            Dictionary<char> open = Dictionary<char>('(', '{');
+            List<char> text = new List<char>(input);
+            foreach (var item in text)
+            {
+                if ()
+                { Console.WriteLine("well formed"); }
+               
+            }
+
         }
 
+       
     }
 }
