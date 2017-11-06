@@ -200,7 +200,7 @@ namespace ShellProj_Datastructures_Memory
             while (true)
 
             {
-                Console.Write("Enter + to get your self in the queue or - to get out: ");
+                Console.Write("Enter + to get your self in the queue or - to get out or r to reverse the text of your wish: ");
                 string input = Console.ReadLine();
                 char nav = input[0];
 
@@ -286,17 +286,75 @@ namespace ShellProj_Datastructures_Memory
              */
             Console.WriteLine("Provide the text here to check: ");
             string input = Console.ReadLine();
-            Dictionary<char> open = Dictionary<char>('(', '{');
-            List<char> text = new List<char>(input);
-            foreach (var item in text)
-            {
-                if ()
-                { Console.WriteLine("well formed"); }
-               
-            }
 
+            List<char> text = new List<char>(input);
+
+            char open = text.First(opengoat => opengoat > '(');
+            
+            Console.WriteLine(open);
+            
+          
+            //    var characterquery =
+            //        from character in text
+            //        where text.Contains.closing
+                    
+            //        select character;
+            //foreach (var item in characterquery)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            
+
+            //var allowedChars = new HashSet<char>(new[] { '(', '[', '{', ')', ']', '}' });
+            //var stack = new Stack<char>(input.Where(c => allowedChars.Contains(c)));
+
+
+
+
+            //Console.Write("Please enter the string you wist to check formity of: ");
+            //var input = Console.ReadLine();
+            //var stack = new Stack<char>();
+
+            //char[] allowedChars = { '(', '[', '{', ')', ']', '}' };
+
+            //foreach (char chr in input)
+            //    if (allowedChars.Any(x => x == chr))
+            //        stack.Push(chr);
+
+            //var reverseStack = stack.Reverse();
+            //var sequencedBalanced = reverseStack.SequenceEqual(stack, BalancedParanthesisComparer.Instance);
+            //Console.WriteLine("The input string was {0}well formed", sequencedBalanced ? string.Empty : "NOT ");
         }
+
+        //public sealed class BalancedParanthesisComparer : EqualityComparer<char>
+        //{
+        //    private static readonly BalancedParanthesisComparer _instance = new BalancedParanthesisComparer();
+
+        //    private BalancedParanthesisComparer() { }
+
+        //    public static BalancedParanthesisComparer Instance { get { return _instance; } }
+
+        //    public override bool Equals(char x, char y)
+        //    {
+        //        if ((x == '(' && y == ')') || (y == '(' && x == ')'))
+        //            return true;
+        //        if ((x == '[' && y == ']') || (y == '[' && x == ']'))
+        //            return true;
+        //        if (x == '{' && y == '}' || (y == '{' && x == '}'))
+        //            return true;
+
+        //        return false;
+        //    }
+
+        //    public override int GetHashCode(char obj)
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
+
+
+    }
 
        
     }
-}
+
